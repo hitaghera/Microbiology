@@ -66,23 +66,22 @@
 
   <img src="https://media.tenor.com/wuYhWlxLJ5cAAAAM/sorry-please.gif" alt="Sorry Gif" />
 
-  <button onclick="confetti({
-  particleCount: 100,
-  spread: 70,
-  origin: { y: 0.6 },
-  emojis: ['💖', '🙏', '🥺']
-}); showForgiveness();">Tap to forgive?</button>
+  <button onclick="triggerForgiveness()">Tap to forgive?</button>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  function triggerForgiveness() {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      emojis: ['💖', '🙏', '🥺']
+    });
 
-  <div id="forgiveness">💖 Thank you for forgiving me! You're the best 💖</div>
-
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script>
-    function showForgiveness() {
-  const msg = document.getElementById("forgiveness");
-  msg.style.visibility = "visible";
-  msg.style.opacity = "1";
-}
-  </script>
+    const msg = document.getElementById("forgiveness");
+    msg.style.display = "block";
+    msg.style.opacity = "1";
+  }
+</script>
 
 </body>
 </html>
